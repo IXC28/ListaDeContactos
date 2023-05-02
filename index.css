@@ -1,0 +1,150 @@
+.container-form{
+display: flex;
+justify-content: center;
+
+
+}
+body{
+    background-color: rgb(195, 128, 235);
+
+}
+label{
+    color: yellow;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 5px;
+    display: inline-block;
+    margin: 3px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #0040ff;
+     color: white;
+
+  }
+  
+.inputs{
+    border:1px solid black
+}
+button:hover{
+-webkit-transform:scale(1.1);transform:scale(1.1);
+    -webkit-transition-duration: 1s;
+}
+#form-btn:hover{
+background-color: aqua;
+transition: all 1s;
+
+
+}
+
+#list{
+
+
+padding: 1rem;
+justify-content: center;
+gap: 3rem;
+
+}
+
+.li-container{
+
+
+margin: 0;
+gap: 2rem;
+
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+.listItem {
+    display: flex;
+    flex-direction: column-reverse;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.edit-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.edit-btn{
+    padding: 0;
+margin: 0;
+width: 90%;
+height: 2rem;
+border-radius: 0.5rem;
+border: 1px solid grey;
+background-color: rgb(0, 255, 76);
+transition: all 1s;
+}
+
+.save-icon{
+
+    height: 2rem;
+    width: 2rem;
+}
+
+.delete-icon {
+    width: 2rem;
+    height: 2rem;
+}
+.delete-btn{
+    padding: 0;
+margin: 0;
+width: 90%;
+border-radius: 0.5rem;
+border: 1px solid grey;
+background-color: red;
+}
+
+
+
+.inputs{
+width: 90%;
+
+}
+input {
+    outline: none;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid grey;
+}
+
+.red {
+    border: 5px solid red;
+    background-color: #0040ff;
+}
+
+.green {
+    border: 5px solid green;
+    background-color: #0040ff;
+}
+.editando{
+    background-color: yellow;
+}
+.listItem{
+    padding: 1rem;
+}
+
+/* @media screen and (min-width: 768px) {
+    #list {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 768px;
+      padding: 2rem;
+      align-items: flex-start;
+    }
+    .listItem {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 360px;
+    }
+  } */
