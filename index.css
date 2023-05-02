@@ -139,11 +139,13 @@ input {
  @media screen and (min-width: 768px) {
     #list {
       display: flex;
-      flex-direction: row;
-    flex-wrap: wrap;
-      padding: 2rem;
+      flex-wrap: wrap;
+    
+     
+          
     }
     .listItem {
+
       margin-top: 20px;
       margin-bottom: 20px;
       width: 100%;

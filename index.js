@@ -10,6 +10,7 @@ const inputs =  document.querySelectorAll('.inputs')
 const list = document.querySelector('#list')
 const listItem = document.querySelector('#listItem')
 const editBtn= document.querySelector('.edit-btn')
+const liContainer = document.querySelector('.li-container')
 
 const Guardar = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 Guardar.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
