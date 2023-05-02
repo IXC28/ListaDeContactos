@@ -5,9 +5,10 @@ justify-content: center;
 
 }
 body{
-    background-color: rgb(195, 128, 235);
+    background-image: url(/img/image4.jpg);
 
 }
+
 label{
     color: yellow;
 }
@@ -19,13 +20,15 @@ input[type=text], select {
     margin: 3px;
     border-radius: 4px;
     box-sizing: border-box;
-    background-color: #0040ff;
-     color: white;
-
+    background-color: #00a6ff;
+     color: black;
+     font-size: 1rem;
+    
   }
   
 .inputs{
-    border:1px solid black
+    border:1px solid black;
+  
 }
 button:hover{
 -webkit-transform:scale(1.1);transform:scale(1.1);
@@ -133,13 +136,12 @@ input {
     padding: 1rem;
 }
 
-/* @media screen and (min-width: 768px) {
+ @media screen and (min-width: 768px) {
     #list {
       display: flex;
-      flex-wrap: wrap;
-      max-width: 768px;
+      flex-direction: row;
+    flex-wrap: wrap;
       padding: 2rem;
-      align-items: flex-start;
     }
     .listItem {
       margin-top: 20px;
@@ -147,4 +149,4 @@ input {
       width: 100%;
       max-width: 360px;
     }
-  } */
+  } 
