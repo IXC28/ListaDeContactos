@@ -11,6 +11,7 @@ const list = document.querySelector('#list')
 const listItem = document.querySelector('#listItem')
 const editBtn= document.querySelector('.edit-btn')
 const liContainer = document.querySelector('.li-container')
+const editando= document.querySelector('.editando')
 
 const Guardar = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 Guardar.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -50,7 +51,10 @@ let contador = 1;
 let inputValidation1 = false;
 let inputValidation2 = false;
 
-const validateInput = (input, regexValidation) => {
+let inputValidation3 = false;
+let inputValidation4 = false;
+
+const validateInputForm = (input, regexValidation) => {
     if (inputValidation1 && inputValidation2) {
         formBtn.disabled = false;
     } else {
@@ -68,6 +72,28 @@ const validateInput = (input, regexValidation) => {
         input.classList.add('red');
     }
 }
+
+
+const validateInputEdit = (input, regexValidation) => {
+    if (inputValidation3 && inputValidation4) {
+        button.disabled = false;
+    } else {
+        button.disabled = true;
+    }
+
+    if (input.value === '') {
+        input.classList.remove('red');
+        input.classList.remove('green');
+    } else if (regexValidation) {
+        input.classList.remove('red');
+        input.classList.add('green');
+    } else {
+        input.classList.remove('green');
+        input.classList.add('red');
+    }
+}
+
+
 const removeIcons = (li) => {
     const editIcon = li.querySelector('.edit-icon');
     const saveIcon = li.querySelector('.save-icon');
@@ -80,12 +106,12 @@ const removeIcons = (li) => {
   };
 nameInput.addEventListener('input', e => {
     inputValidation1 = REGEX_NAME.test(e.target.value);
-    validateInput(nameInput, inputValidation1)
+    validateInputForm(nameInput, inputValidation1)
 });
 
 numberInput.addEventListener('input', e => {
     inputValidation2 = REGEX_NUMBER.test(e.target.value);
-    validateInput(numberInput, inputValidation2)
+    validateInputForm(numberInput, inputValidation2)
 });
 
 
@@ -120,12 +146,12 @@ form.addEventListener('submit', e => {
     nameInput.value = '';
     inputValidation1 = false;
 
-    validateInput(nameInput);
+    validateInputForm(nameInput);
 
     numberInput.value = '';
     inputValidation2 = false;
    
-    validateInput(numberInput);
+    validateInputForm(numberInput);
 
     
 });
@@ -150,6 +176,39 @@ list.addEventListener('click', e => {
         const button = e.target.closest('.edit-btn');
         const editInput = button.parentElement.children[1];
         const editInput2 = button.parentElement.children[2];
+
+
+        const validateInputEdit = (input, regexValidation) => {
+            if (inputValidation3) {
+                button.disabled = false;
+            } else {
+                button.disabled = true;
+            }
+        
+            if (input.value === '') {
+                input.classList.remove('red');
+                input.classList.remove('green');
+            } else if (regexValidation) {
+                input.classList.remove('red');
+                input.classList.add('green');
+            } else {
+                input.classList.remove('green');
+                input.classList.add('red');
+            }
+        }
+
+
+        editInput2.addEventListener('input', e => {
+            inputValidation3 = REGEX_NAME.test(e.target.value);
+            validateInputEdit(editInput2, inputValidation3)
+        });
+        
+        editInput.addEventListener('input', e => {
+            inputValidation3 = REGEX_NUMBER.test(e.target.value);
+            validateInputEdit(editInput, inputValidation3)
+        });
+
+
         if (button.classList.contains('editando')) {
             console.log('1');
 
@@ -167,6 +226,10 @@ list.addEventListener('click', e => {
             editInput.setAttribute('value', editInput.value);
 
             editInput2.setAttribute('value', editInput2.value);
+
+            editInput.classList.remove('green');
+            editInput2.classList.remove('green');
+
             localStorage.setItem('list', list.innerHTML);
 
 
@@ -178,6 +241,8 @@ list.addEventListener('click', e => {
             button.classList.add('editando');
             editInput.removeAttribute('readonly');
             editInput2.removeAttribute('readonly');
+            
+
             
         }
     }
