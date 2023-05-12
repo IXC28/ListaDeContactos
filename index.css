@@ -143,8 +143,9 @@ transition: all 1s;
 box-shadow:rgba(98, 255, 0, 0.755) 0 0 15px 10px;
 
 }
-.edit-btn:hover{
-
+.edit-btn:disabled{
+    color:rgba(98, 255, 0, 0.21) ;
+    box-shadow:rgba(98, 255, 0, 0.31) 0 0 15px 10px;
 }
 .save-icon{
     height: 2rem;
